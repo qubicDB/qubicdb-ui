@@ -1,0 +1,34 @@
+services:
+  qubicdb:
+    build:
+      context: ../qubicdb
+      dockerfile: Dockerfile
+    container_name: qubicdb
+    ports:
+      - "6060:6060"
+    volumes:
+      - qubicdb_data:/app/data
+    environment:
+      - QUBICDB_HTTP_ADDR=:6060
+      - QUBICDB_DATA_PATH=/app/data
+      - QUBICDB_ADMIN_ENABLED=true
+      - QUBICDB_ADMIN_USER=admin
+      - QUBICDB_ADMIN_PASSWORD=qubicdb
+      - QUBICDB_ALLOWED_ORIGINS=http://localhost:8080,http://127.0.0.1:8080
+    restart: unless-stopped
+
+  qubicdb-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qubicdb-ui
+    depends_on:
+      qubicdb:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+volumes:
+  qubicdb_data:
+    driver: local

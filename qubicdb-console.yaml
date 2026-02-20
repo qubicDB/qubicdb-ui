@@ -1,0 +1,18 @@
+# QubicDB Console Configuration (template)
+# NOTE: The UI currently reads server URL from browser state and runtime
+# config from QubicDB `/v1/config`. This file is informational only.
+server:
+  host: "localhost"
+  port: 6060
+  timeout: 30000  # ms
+
+auth:
+  admin_user: "admin"
+  admin_password: "<set-at-login>"
+  session_timeout: 3600  # seconds
+
+ui:
+  port: 3000
+  theme: "dark"
+  refresh_interval: 1000  # ms for live updates
+  max_graph_nodes: 500  # limit for visualization
