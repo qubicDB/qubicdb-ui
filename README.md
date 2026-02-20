@@ -2,6 +2,9 @@
 
 Production-oriented React dashboard for operating QubicDB indexes, memory, lifecycle, and runtime config.
 
+[![Docker Hub](https://img.shields.io/docker/v/qubicdb/qubicdb-ui?label=Docker%20Hub&logo=docker&color=0db7ed)](https://hub.docker.com/r/qubicdb/qubicdb-ui)
+[![Docker Pulls](https://img.shields.io/docker/pulls/qubicdb/qubicdb-ui?color=0db7ed)](https://hub.docker.com/r/qubicdb/qubicdb-ui)
+
 This README is aligned with:
 - QubicDB OpenAPI: [github.com/qubicDB/docs — openapi.yaml](https://github.com/qubicDB/qubicdb/blob/main/openapi.yaml)
 - QubicDB API docs: [github.com/qubicDB/docs — API.md](https://github.com/qubicDB/docs/blob/main/API.md)
@@ -33,6 +36,19 @@ If admin endpoints are disabled server-side, login and admin pages will fail (ex
 ---
 
 ## Quick start
+
+### Docker (recommended)
+
+```bash
+docker pull qubicdb/qubicdb-ui:1.0.0
+docker run -d -p 8080:80 qubicdb/qubicdb-ui:1.0.0
+```
+
+UI available at `http://localhost:8080`. Point it to your QubicDB server from the Settings page.
+
+Docker Hub: [hub.docker.com/r/qubicdb/qubicdb-ui](https://hub.docker.com/r/qubicdb/qubicdb-ui)
+
+### Local dev
 
 ```bash
 npm install
