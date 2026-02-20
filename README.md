@@ -287,3 +287,7 @@ Common operational codes to watch in UI flows:
 
 - MCP (`/mcp`) is not used by this dashboard; it is intended for LLM clients.
 - Direct mutation API routes (`/v1/touch`, `/v1/forget`, `/v1/fire`) are intentionally disabled by server policy.
+
+---
+
+Developed by [Deniz Umut Dereli](https://github.com/denizumutdereli)
