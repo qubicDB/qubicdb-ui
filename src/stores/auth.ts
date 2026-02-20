@@ -59,6 +59,9 @@ export const useAuthStore = create<AuthState>()(
       name: 'qubicdb-auth',
       partialize: (state: AuthState) => ({
         serverUrl: state.serverUrl,
+        isAuthenticated: state.isAuthenticated,
+        user: state.user,
+        password: state.password,
       }),
     }
   )
